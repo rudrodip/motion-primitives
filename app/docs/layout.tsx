@@ -33,12 +33,22 @@ const NAVIGATION: NavigationGroup[] = [
     name: 'Components',
     children: [
       {
+        name: 'Animated Number',
+        href: '/docs/animated-number',
+        isNew: true,
+      },
+      {
         name: 'Accordion',
         href: '/docs/accordion',
       },
       {
         name: 'Animated background',
         href: '/docs/animated-background',
+      },
+      {
+        name: 'Carousel',
+        href: '/docs/carousel',
+        isNew: true,
       },
       {
         name: 'Cursor',
@@ -81,7 +91,7 @@ const NAVIGATION: NavigationGroup[] = [
 
 function Header() {
   return (
-    <header className='sticky top-0 z-10 flex h-14 items-center justify-center border-b border-zinc-950/10 bg-white px-6 py-5 dark:border-white/10 dark:bg-zinc-950'>
+    <header className='sticky top-0 z-10 flex h-16 items-center justify-center border-b border-zinc-950/10 bg-white px-6 py-5 dark:border-white/10 dark:bg-zinc-950'>
       <div className='mx-auto flex w-full items-center justify-between md:max-w-7xl'>
         <a href='/' className='relative flex items-center'>
           <div className='text-zinc-950 dark:text-white'>motion-primitives</div>
@@ -117,8 +127,8 @@ function NavigationDesktop() {
   const pathname = usePathname();
 
   return (
-    <aside className='sticky hidden h-[calc(100dvh-theme(spacing.16))] w-[220px] shrink-0 pt-8 md:block lg:pt-12'>
-      <ScrollArea>
+    <aside className='sticky top-14 hidden h-[calc(100dvh-theme(spacing.16))] w-[220px] shrink-0 pt-8 md:block lg:pt-12'>
+      <ScrollArea className='h-full w-full'>
         <nav>
           <ul role='list' className='h-full'>
             {NAVIGATION.map((item, index) => {
